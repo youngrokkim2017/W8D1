@@ -1,0 +1,16 @@
+<h1><%= @post.title %></h1>
+<h4><%= @post.url %></h4>
+
+<p>
+<%= @post.content %>
+</p>
+
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+  <li><a href=""><%= comment.content %></a></li>
+<% end %>
+<br>
+<br>
+<a href="<%= new_post_comment_url(@post) %>">Add Comment</a>
+
+<a href="<%= subs_url %>">All Subs</a>
